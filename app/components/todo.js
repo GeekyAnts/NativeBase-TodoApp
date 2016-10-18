@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header, Title, Content, Button, Icon, InputGroup, Input, CheckBox, ListItem } from 'native-base';
+import { Container, Header, Title, Content, InputGroup, Input, CheckBox, ListItem, Icon, Button } from 'native-base';
 
 import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
 
@@ -12,6 +12,9 @@ export default class Todo extends Component {
   toggle(id) {//eslint-disable-line
     this.props.setVisibilityFilter(id);//eslint-disable-line
     // console.log(this.props);
+  }
+  remove(id){
+    this.props.removeTodo(id);
   }
   listAll() {//eslint-disable-line
     // console.log(this.props.todos[0].completed);
@@ -37,31 +40,28 @@ export default class Todo extends Component {
     return (
       <Container>
         <Header >
-          <Button transparent>
-            <Icon name="ios-arrow-back" />
-          </Button>
 
           <Title>ToDo</Title>
 
-          <Button transparent>
-            <Icon name="ios-menu" />
-          </Button>
-        </Header>
-        <Content contentContainerStyle={{ flex: 1 }} >
 
-          <View style={{ flex: 0.99 }}>
+        </Header>
+        <Content contentContainerStyle={{ justifyContent: 'space-between' }} >
+
+
+          <View >
 
             {(this.state.displayType === 'all') ?   //eslint-disable-line
             // console.log("Hello")
 
+
             this.props.todos.map((item, index) => {//eslint-disable-line
 
-              return (<View key={index} style={{ flexDirection: 'row' }}>
-                <ListItem style={{ flex: 1 }}>
-                  <CheckBox onPress={this.toggle.bind(this, index)}  checked={item.completed} />
-                  <Text>
-                    {item.text}</Text>
-                </ListItem>
+              return (
+                <View key={index} style={{ flexDirection: 'row' }}>
+                  <ListItem style={{ flex: 1, flexDirection: 'row' }}>
+                    <CheckBox onPress={this.toggle.bind(this, index)}  checked={item.completed} />
+                    <Text>
+                      {item.text}</Text></ListItem>
               </View>)//eslint-disable-line
             }) : (
               (this.state.displayType === 'completed') ?
@@ -72,10 +72,14 @@ export default class Todo extends Component {
                 <View key={index} style={{ flexDirection: 'row' }}>
                   <ListItem style={{ flex: 1 }}>
                     <CheckBox checked={item.completed} />
-                    <Text
+                    <Text style={{alignSelf: 'center'}}
                       onPress={this.toggle.bind(this, index)}>
                       {item.text}
                     </Text>
+                    <Button style={{ backgroundColor: '#384850' }} >
+                      <Icon name="md-remove" style={{ color: '#ffffff' }} onPress={this.remove.bind(this, index)}/>
+                    </Button>
+
                   </ListItem>
                 </View>
             ) : null
@@ -114,26 +118,25 @@ export default class Todo extends Component {
 
             </View>
           </View>
-          <View
-            style={{ height: 100, width, alignSelf: 'flex-end', flex: 0.01 }}
-          >
-            <InputGroup
-              borderType="rounded"
-              style={{ margin: 20 }}
-            >
-              <Input
-                placeholder="Type Your Text Here"
-                style={{
-                }}
-                value={this.state.text}
-                onChangeText={text => this.setState({ text })}
-                onEndEditing={this.onSubmit.bind(this)}//eslint-disable-line
-              />
-            </InputGroup>
-          </View>
 
 
         </Content>
+        <View
+          style={{ width, alignSelf: 'flex-end', flex: 0, padding: 5 }}
+          >
+          <InputGroup
+            borderType="rounded"
+            >
+            <Input
+              placeholder="Type Your Text Here"
+              style={{
+              }}
+              value={this.state.text}
+              onChangeText={text => this.setState({ text })}
+              onEndEditing={this.onSubmit.bind(this)}//eslint-disable-line
+              />
+          </InputGroup>
+        </View>
       </Container>
     );
   }

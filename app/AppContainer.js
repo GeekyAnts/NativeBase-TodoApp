@@ -23,7 +23,15 @@ function mapDispatchToProps(dispatch) {
         type: 'SET_VISIBILITY_FILTER',
         index,
       }
-                ); },
+      );
+    },
+    removeTodo: (index) => { dispatch(
+      {
+        type: 'REMOVE_TODO',
+        index,
+      }
+    );
+    },
   };
 }
 

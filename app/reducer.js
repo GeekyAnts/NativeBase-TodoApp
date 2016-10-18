@@ -12,6 +12,11 @@ export default function (state = initialState, action) {
         todos:
               [...state.todos, { text: action.payload, completed: false }] };
             // console.log(...state.todos);
+    case 'REMOVE_TODO':
+      return {
+        ...state,
+        todos:[ ...state.todos.slice(0,action.index), ...state.todos.slice(action.index+1)]
+      };
     case 'SET_VISIBILITY_FILTER':
             // console.log(action.index)
             // console.log(state.todos[0].completed);

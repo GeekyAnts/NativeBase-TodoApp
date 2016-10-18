@@ -1,13 +1,20 @@
 export function addTodo(payload) {
   return {
     type: 'ADD_TODO',
-    payload
-  }
+    payload,
+  };
 }
 
 export function setVisibilityFilter(index) {
   return {
     type: 'SET_VISIBILITY_FILTER',
-    index
-  }
+    index,
+  };
+}
+
+export function removeTodo(index) {
+  return {
+    type: 'REMOVE_TODO',
+    index,
+  };
 }
