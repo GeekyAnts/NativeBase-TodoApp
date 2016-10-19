@@ -41,7 +41,7 @@ export default class Todo extends Component {
       <Container>
         <Header >
 
-          <Title>ToDo</Title>
+          <Title>NativeBase To-do App</Title>
 
 
         </Header>
@@ -76,9 +76,9 @@ export default class Todo extends Component {
                       onPress={this.toggle.bind(this, index)}>
                       {item.text}
                     </Text>
-                    <Button style={{ backgroundColor: '#384850' }} >
-                      <Icon name="md-remove" style={{ color: '#ffffff' }} onPress={this.remove.bind(this, index)}/>
-                    </Button>
+
+                      <Icon name="md-trash" style={{ color: '#000000' }} onPress={this.remove.bind(this, index)}/>
+
 
                   </ListItem>
                 </View>
@@ -122,20 +122,25 @@ export default class Todo extends Component {
 
         </Content>
         <View
-          style={{ width, alignSelf: 'flex-end', flex: 0, padding: 5 }}
-          >
+          style={{ width, alignSelf: 'flex-end', flex: 0, padding: 5, flexDirection: 'row' }}
+        >
           <InputGroup
-            borderType="rounded"
-            >
+            borderType="underline"
+            style={{ flex: 0.9 }}
+          >
             <Input
               placeholder="Type Your Text Here"
               style={{
+
               }}
               value={this.state.text}
               onChangeText={text => this.setState({ text })}
-              onEndEditing={this.onSubmit.bind(this)}//eslint-disable-line
-              />
+              onSubmitEditing={this.onSubmit.bind(this)}//eslint-disable-line
+            />
           </InputGroup>
+          <Button
+            style={{ flex: 0.1, marginLeft: 15 }}
+            onPress={this.onSubmit.bind(this)} > Send </Button>
         </View>
       </Container>
     );
