@@ -8,7 +8,7 @@
   "dependencies": {
     "moment": "^2.15.1",
     "native-base": "https://github.com/GeekyAnts/NativeBase",
-    "react": "15.3.1",
+    "react": "0.16.1",
     "react-native": "0.33.0",
     "react-redux": "^4.4.5",
     "redux": "^3.6.0"

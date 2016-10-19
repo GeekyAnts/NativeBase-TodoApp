@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import dismissKeyboard from 'dismissKeyboard';
 import { Container, Header, Title, Content, InputGroup, Input, CheckBox, ListItem, Icon, Button } from 'native-base';
 
 import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
@@ -26,17 +27,25 @@ export default class Todo extends Component {
     // textList.push(this.state.text);
     // console.log(textList);
 
+    if (this.state.text.length > 0) {
     this.props.addTodo(this.state.text);//eslint-disable-line
     this.setState({
 
       // textList.push(this.state.text),
       text: '',
     });
+    }
+    dismissKeyboard();
   }
   render() {
     // {console.log(this.state.text)}
     // {console.log(this.props.done)}
     // console.log(this.props);
+
+    const completed = this.props.todos.filter(item => item.completed).length
+    const active = this.props.todos.filter(item => !item.completed).length
+
+
     return (
       <Container>
         <Header >
@@ -53,7 +62,7 @@ export default class Todo extends Component {
             {(this.state.displayType === 'all') ?   //eslint-disable-line
             // console.log("Hello")
 
-
+///\ this.props.todos.filter(item => item.completed).length > 0
             this.props.todos.map((item, index) => {//eslint-disable-line
 
               return (
@@ -65,8 +74,11 @@ export default class Todo extends Component {
               </View>)//eslint-disable-line
             }) : (
               (this.state.displayType === 'completed') ?
-            this.props.todos.map((item, index) => {//eslint-disable-line
+
+              completed > 0 ?
+            (this.props.todos.map((item, index) => {//eslint-disable-line
               return (
+
               (item.completed === true) ?
               (
                 <View key={index} style={{ flexDirection: 'row' }}>
@@ -77,13 +89,14 @@ export default class Todo extends Component {
                       {item.text}
                     </Text>
 
-                      <Icon name="md-trash" style={{ color: '#000000' }} onPress={this.remove.bind(this, index)}/>
+                    <Icon name="md-trash" style={{ color: '#000000' }} onPress={this.remove.bind(this, index)}/>
 
 
                   </ListItem>
                 </View>
             ) : null
-          ) })://eslint-disable-line
+          )
+        })) : <View style={{alignItems: 'center'}}><Text>No Completed Data</Text></View>   ://eslint-disable-line
             this.props.todos.map((item, index) => {//eslint-disable-line
               return (
               (item.completed === false) ?
@@ -111,9 +124,9 @@ export default class Todo extends Component {
                 width,
                 marginTop: 50 }}
             >
-              <TouchableOpacity onPress={() => this.setState({ displayType: 'all' })}><Text>All</Text></TouchableOpacity>
-              <TouchableOpacity onPress={() => this.setState({ displayType: 'completed' })}><Text>Completed</Text></TouchableOpacity>
-              <TouchableOpacity onPress={() => this.setState({ displayType: 'active' })}><Text>Active</Text></TouchableOpacity>
+              <Button transparent bordered={this.state.displayType=='all'} onPress={() => this.setState({ displayType: 'all' })}>All</Button>
+              <Button transparent bordered={this.state.displayType=='completed'} onPress={() => this.setState({ displayType: 'completed' })}>Completed</Button>
+              <Button transparent bordered={this.state.displayType=='active'} onPress={() => this.setState({ displayType: 'active' })}>Active</Button>
 
 
             </View>
@@ -121,7 +134,7 @@ export default class Todo extends Component {
 
 
         </Content>
-        <View
+        {(this.state.displayType=='all') ? <View
           style={{ width, alignSelf: 'flex-end', flex: 0, padding: 5, flexDirection: 'row' }}
         >
           <InputGroup
@@ -136,12 +149,13 @@ export default class Todo extends Component {
               value={this.state.text}
               onChangeText={text => this.setState({ text })}
               onSubmitEditing={this.onSubmit.bind(this)}//eslint-disable-line
+              maxLength={35}
             />
           </InputGroup>
           <Button
             style={{ flex: 0.1, marginLeft: 15 }}
-            onPress={this.onSubmit.bind(this)} > Send </Button>
-        </View>
+            onPress={this.onSubmit.bind(this)} > Add </Button>
+        </View> : undefined}
       </Container>
     );
   }
