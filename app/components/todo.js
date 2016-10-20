@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import dismissKeyboard from 'dismissKeyboard';
 import { Container, Header, Title, Content, InputGroup, Input, CheckBox, ListItem, Icon, Button } from 'native-base';
 
-import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Dimensions, StatusBar } from 'react-native';
 
 let { width } = Dimensions.get('window');//eslint-disable-line
 export default class Todo extends Component {

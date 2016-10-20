@@ -7,6 +7,8 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  View,
+  StatusBar
 } from 'react-native';
 import Index from './app/index';
 
@@ -27,7 +29,13 @@ class ReduxTime extends Component { // eslint-disable-line
       // </View>
       // <Index />
       // <Test />
-      <Index />
+      <View style={{ flex: 1 }}>
+        <StatusBar
+          backgroundColor={'#304FFE'}
+          barStyle="light-content"
+        />
+        <Index />
+      </View>
     );
   }
 }
