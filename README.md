@@ -11,6 +11,17 @@ iOS | Android
 
 ## Running this app
 
+#### System Requirements
+
+* Globally installed [node](https://nodejs.org/en/) >= 4.0
+
+* Globally installed [npm](https://www.npmjs.org/) >= 3.0
+
+* Globally installed [react-native CLI](https://facebook.github.io/react-native/docs/getting-started.html)
+
+
+#### Run Commands
+
 ```sh
 $ git clone git@github.com:GeekyAnts/NativeBase-TodoApp.git
 $ cd NativeBase-TodoApp
