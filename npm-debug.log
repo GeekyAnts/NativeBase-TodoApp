@@ -1,21 +1,22 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/usr/local/Cellar/node/6.6.0/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'start' ]
+1 verbose cli   'run',
+1 verbose cli   'eslint',
+1 verbose cli   '.' ]
 2 info using npm@3.10.8
 3 info using node@v6.6.0
-4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info lifecycle ReduxTime@0.0.1~prestart: ReduxTime@0.0.1
-6 silly lifecycle ReduxTime@0.0.1~prestart: no script for prestart, continuing
-7 info lifecycle ReduxTime@0.0.1~start: ReduxTime@0.0.1
-8 verbose lifecycle ReduxTime@0.0.1~start: unsafe-perm in lifecycle true
-9 verbose lifecycle ReduxTime@0.0.1~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/.bin:/usr/local/Cellar/node/6.6.0/bin:/Users/aftabbhadki/Library/Android/sdk/tools:/Users/aftabbhadki/Library/Android/sdk/platform-tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-10 verbose lifecycle ReduxTime@0.0.1~start: CWD: /Users/aftabbhadki/Sites/projects/ReduxTime
-11 silly lifecycle ReduxTime@0.0.1~start: Args: [ '-c',
-11 silly lifecycle   'node node_modules/react-native/local-cli/cli.js start' ]
-12 silly lifecycle ReduxTime@0.0.1~start: Returned: code: 1  signal: null
-13 info lifecycle ReduxTime@0.0.1~start: Failed to exec start script
-14 verbose stack Error: ReduxTime@0.0.1 start: `node node_modules/react-native/local-cli/cli.js start`
+4 verbose run-script [ 'preeslint', 'eslint', 'posteslint' ]
+5 info lifecycle NativeBase-TodoApp@1.0.0~preeslint: NativeBase-TodoApp@1.0.0
+6 silly lifecycle NativeBase-TodoApp@1.0.0~preeslint: no script for preeslint, continuing
+7 info lifecycle NativeBase-TodoApp@1.0.0~eslint: NativeBase-TodoApp@1.0.0
+8 verbose lifecycle NativeBase-TodoApp@1.0.0~eslint: unsafe-perm in lifecycle true
+9 verbose lifecycle NativeBase-TodoApp@1.0.0~eslint: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/aftabbhadki/Sites/projects/NativeBase-TodoApp/node_modules/.bin:/usr/local/Cellar/node/6.6.0/bin:/Users/aftabbhadki/Library/Android/sdk/tools:/Users/aftabbhadki/Library/Android/sdk/platform-tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+10 verbose lifecycle NativeBase-TodoApp@1.0.0~eslint: CWD: /Users/aftabbhadki/Sites/projects/NativeBase-TodoApp
+11 silly lifecycle NativeBase-TodoApp@1.0.0~eslint: Args: [ '-c', 'eslint "."' ]
+12 silly lifecycle NativeBase-TodoApp@1.0.0~eslint: Returned: code: 1  signal: null
+13 info lifecycle NativeBase-TodoApp@1.0.0~eslint: Failed to exec eslint script
+14 verbose stack Error: NativeBase-TodoApp@1.0.0 eslint: `eslint "."`
 14 verbose stack Exit status 1
 14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
 14 verbose stack     at emitTwo (events.js:106:13)
@@ -25,24 +26,24 @@
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
 14 verbose stack     at maybeClose (internal/child_process.js:877:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
-15 verbose pkgid ReduxTime@0.0.1
-16 verbose cwd /Users/aftabbhadki/Sites/projects/ReduxTime
+15 verbose pkgid NativeBase-TodoApp@1.0.0
+16 verbose cwd /Users/aftabbhadki/Sites/projects/NativeBase-TodoApp
 17 error Darwin 15.6.0
-18 error argv "/usr/local/Cellar/node/6.6.0/bin/node" "/usr/local/bin/npm" "start"
+18 error argv "/usr/local/Cellar/node/6.6.0/bin/node" "/usr/local/bin/npm" "run" "eslint" "."
 19 error node v6.6.0
 20 error npm  v3.10.8
 21 error code ELIFECYCLE
-22 error ReduxTime@0.0.1 start: `node node_modules/react-native/local-cli/cli.js start`
+22 error NativeBase-TodoApp@1.0.0 eslint: `eslint "."`
 22 error Exit status 1
-23 error Failed at the ReduxTime@0.0.1 start script 'node node_modules/react-native/local-cli/cli.js start'.
+23 error Failed at the NativeBase-TodoApp@1.0.0 eslint script 'eslint "."'.
 23 error Make sure you have the latest version of node.js and npm installed.
-23 error If you do, this is most likely a problem with the ReduxTime package,
+23 error If you do, this is most likely a problem with the NativeBase-TodoApp package,
 23 error not with npm itself.
 23 error Tell the author that this fails on your system:
-23 error     node node_modules/react-native/local-cli/cli.js start
+23 error     eslint "."
 23 error You can get information on how to open an issue for this project with:
-23 error     npm bugs ReduxTime
+23 error     npm bugs NativeBase-TodoApp
 23 error Or if that isn't available, you can get their info via:
-23 error     npm owner ls ReduxTime
+23 error     npm owner ls NativeBase-TodoApp
 23 error There is likely additional logging output above.
 24 verbose exit [ 1, true ]
