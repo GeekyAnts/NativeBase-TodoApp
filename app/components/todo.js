@@ -1,122 +1,104 @@
 import React, { Component } from 'react';
-import dismissKeyboard from 'dismissKeyboard';
-import { Container, Header, Title, Content, InputGroup, Input, CheckBox, ListItem, Icon, Button } from 'native-base';
+import { Container, Header, Title, Content, InputGroup, Input, List, Button, Icon } from 'native-base';
+import { View, Text, Dimensions } from 'react-native';
 
-import { View, Text, TouchableOpacity, Dimensions, StatusBar } from 'react-native';
+import TodoItem from './TodoItem';
 
-let { width } = Dimensions.get('window');//eslint-disable-line
+const { width } = Dimensions.get('window');
+
 export default class Todo extends Component {
+
+  static propTypes = {
+    removeTodo: React.PropTypes.func,
+    setVisibilityFilter: React.PropTypes.func,
+    toggleTodo: React.PropTypes.func,
+    todos: React.PropTypes.array,
+    displayType: React.PropTypes.string,
+  }
+
   constructor(props) {
     super(props);
-    this.state = { text: '', displayType: 'all' };
+    this.state = { inputText: '', displayType: 'all' };
   }
-  toggle(id) {//eslint-disable-line
-    this.props.setVisibilityFilter(id);//eslint-disable-line
-    // console.log(this.props);
+
+  onSubmit() {
+    if (this.state.inputText.length > 0) {
+    this.props.addTodo(this.state.inputText);//eslint-disable-line
+      this.setState({
+        inputText: '',
+      });
+    }
   }
-  remove(id){
+
+  remove(id) {
     this.props.removeTodo(id);
   }
-  listAll() {//eslint-disable-line
-    // console.log(this.props.todos[0].completed);
-    // console.log(this.props.todos.map(item => "Hello"));
-    // this.props.todos.map(item =>  <Text>hELLO</Text>);
+
+  toggle(id) {
+    this.props.toggleTodo(id);
   }
-  onSubmit() {
-    //  console.log(textList);
-    // textList.push(this.state.text);
-    // console.log(textList);
 
-    if (this.state.text.length > 0) {
-    this.props.addTodo(this.state.text);//eslint-disable-line
-    this.setState({
+  renderTodoList() {
+    if ((this.props.displayType === 'all')) {
+      return this.props.todos.map((item, index) =>
+        <TodoItem
+          toggle={() => this.toggle(index)}
+          remove={() => this.remove(index)}
+          item={item}
+          key={index}
+        />
+      );
+    } else if (this.props.displayType === 'completed') {
+      const completed = this.props.todos.filter(item => item.completed).length;
+      if (completed > 0) {
+        return this.props.todos.map((item, index) => {
+          if (item.completed === true) {
+            return (<TodoItem
+              toggle={() => this.toggle(index)}
+              remove={() => this.remove(index)}
+              item={item}
+              key={index}
+            />);
+          }
 
-      // textList.push(this.state.text),
-      text: '',
-    });
+          return null;
+        });
+      }
+      return <View style={{ alignItems: 'center', paddingTop: 10 }}><Text>No Completed Data</Text></View>;
     }
-    dismissKeyboard();
+
+    return this.props.todos.map((item, index) => {
+      if (item.completed === false) {
+        return (
+          <TodoItem
+            toggle={() => this.toggle(index)}
+            remove={() => this.remove(index)}
+            item={item}
+            key={index}
+          />
+        );
+      }
+      return null;
+    });
   }
+
   render() {
-    // {console.log(this.state.text)}
-    // {console.log(this.props.done)}
-    // console.log(this.props);
-
-    const completed = this.props.todos.filter(item => item.completed).length
-    const active = this.props.todos.filter(item => !item.completed).length
-
-
     return (
       <Container>
         <Header >
-
+          <Button transparent>
+            <Icon name="ios-home"/>
+          </Button>
           <Title>NativeBase To-do App</Title>
-
-
         </Header>
+
         <Content contentContainerStyle={{ justifyContent: 'space-between' }} >
-
-
           <View >
+            <List>
+              {this.renderTodoList()}
+            </List>
 
-            {(this.state.displayType === 'all') ?   //eslint-disable-line
-            // console.log("Hello")
-
-///\ this.props.todos.filter(item => item.completed).length > 0
-            this.props.todos.map((item, index) => {//eslint-disable-line
-
-              return (
-                <View key={index} style={{ flexDirection: 'row' }}>
-                  <ListItem style={{ flex: 1, flexDirection: 'row' }}>
-                    <CheckBox onPress={this.toggle.bind(this, index)}  checked={item.completed} />
-                    <Text>
-                      {item.text}</Text></ListItem>
-              </View>)//eslint-disable-line
-            }) : (
-              (this.state.displayType === 'completed') ?
-
-              completed > 0 ?
-            (this.props.todos.map((item, index) => {//eslint-disable-line
-              return (
-
-              (item.completed === true) ?
-              (
-                <View key={index} style={{ flexDirection: 'row' }}>
-                  <ListItem style={{ flex: 1 }}>
-                    <CheckBox checked={item.completed} />
-                    <Text style={{alignSelf: 'center'}}
-                      onPress={this.toggle.bind(this, index)}>
-                      {item.text}
-                    </Text>
-
-                    <Icon name="md-trash" style={{ color: '#000000' }} onPress={this.remove.bind(this, index)}/>
-
-
-                  </ListItem>
-                </View>
-            ) : null
-          )
-        })) : <View style={{alignItems: 'center'}}><Text>No Completed Data</Text></View>   ://eslint-disable-line
-            this.props.todos.map((item, index) => {//eslint-disable-line
-              return (
-              (item.completed === false) ?
-              (
-                <View key={index} style={{ flexDirection: 'row' }}>
-                  <ListItem style={{ flex: 1 }}>
-                    <CheckBox checked={item.completed} />
-                    <Text
-                    onPress={this.toggle.bind(this, index)}//eslint-disable-line
-                    >
-                      {item.text}
-                    </Text>
-                  </ListItem>
-                </View>
-            ) : null
-            ); })
-          )
-         }
-            {/* {console.log(this.props.done)} */}
-            <View
+            {this.props.todos.length > 0 && <View
               style={{
                 flexDirection: 'row',
                 alignSelf: 'center',
@@ -124,38 +106,53 @@ export default class Todo extends Component {
                 width,
                 marginTop: 50 }}
             >
-              <Button transparent bordered={this.state.displayType=='all'} onPress={() => this.setState({ displayType: 'all' })}>All</Button>
-              <Button transparent bordered={this.state.displayType=='completed'} onPress={() => this.setState({ displayType: 'completed' })}>Completed</Button>
-              <Button transparent bordered={this.state.displayType=='active'} onPress={() => this.setState({ displayType: 'active' })}>Active</Button>
+              <Button
+                transparent
+                bordered={this.props.displayType === 'all'}
+                onPress={() => this.props.setVisibilityFilter('all')}
+              >All</Button>
 
+              <Button
+                transparent
+                bordered={this.props.displayType === 'completed'}
+                onPress={() => this.props.setVisibilityFilter('completed')}
+              >Completed</Button>
 
-            </View>
+              <Button
+                transparent
+                bordered={this.props.displayType === 'active'}
+                onPress={() => this.props.setVisibilityFilter('active')}
+              >Active</Button>
+
+            </View>}
           </View>
-
-
         </Content>
-        {(this.state.displayType=='all') ? <View
-          style={{ width, alignSelf: 'flex-end', flex: 0, padding: 5, flexDirection: 'row' }}
+
+        <View
+          style={{
+            alignSelf: 'flex-end',
+            flex: 0,
+            padding: 5,
+            flexDirection: 'row',
+          }}
         >
           <InputGroup
-            borderType="underline"
+            borderType="rounded"
             style={{ flex: 0.9 }}
           >
             <Input
               placeholder="Type Your Text Here"
-              style={{
-
-              }}
-              value={this.state.text}
-              onChangeText={text => this.setState({ text })}
-              onSubmitEditing={this.onSubmit.bind(this)}//eslint-disable-line
+              value={this.state.inputText}
+              onChangeText={inputText => this.setState({ inputText })}
+              onSubmitEditing={() => this.onSubmit()}
               maxLength={35}
             />
           </InputGroup>
           <Button
             style={{ flex: 0.1, marginLeft: 15 }}
-            onPress={this.onSubmit.bind(this)} > Add </Button>
-        </View> : undefined}
+            onPress={() => this.onSubmit()}
+          > Add </Button>
+        </View>
       </Container>
     );
   }
