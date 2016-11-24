@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/Vibration/RCTVibration.m \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/Vibration/RCTVibration.h \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/Vibration/RCTVibration.m \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/Vibration/RCTVibration.h \
   ../../React/Base/RCTBridgeModule.h ../../React/Base/RCTDefines.h

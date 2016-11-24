@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native-vector-icons/RNVectorIconsManager/RNVectorIconsManager.m \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native-vector-icons/RNVectorIconsManager/RNVectorIconsManager.h \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native-vector-icons/RNVectorIconsManager/RNVectorIconsManager.m \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native-vector-icons/RNVectorIconsManager/RNVectorIconsManager.h \
   ../react-native/React/Base/RCTBridgeModule.h \
   ../react-native/React/Base/RCTDefines.h \
   ../react-native/React/Base/RCTLog.h \

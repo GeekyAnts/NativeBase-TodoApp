@@ -1,7 +1,7 @@
 dependencies: \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/Text/RCTText.m \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/Text/RCTText.h \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/Text/RCTShadowText.h \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/Text/RCTText.m \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/Text/RCTText.h \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/Text/RCTShadowText.h \
   ../../React/Views/RCTShadowView.h ../../React/CSSLayout/CSSLayout.h \
   ../../React/CSSLayout/CSSMacros.h ../../React/Views/RCTComponent.h \
   ../../React/Base/RCTRootView.h ../../React/Base/RCTBridge.h \

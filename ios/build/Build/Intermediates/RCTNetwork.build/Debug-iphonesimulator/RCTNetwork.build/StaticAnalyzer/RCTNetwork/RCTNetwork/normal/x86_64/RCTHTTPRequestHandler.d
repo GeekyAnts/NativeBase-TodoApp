@@ -1,13 +1,13 @@
 dependencies: \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/Network/RCTHTTPRequestHandler.m \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/Network/RCTHTTPRequestHandler.h \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/Network/RCTHTTPRequestHandler.m \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/Network/RCTHTTPRequestHandler.h \
   ../../React/Base/RCTURLRequestHandler.h \
   ../../React/Base/RCTBridgeModule.h ../../React/Base/RCTDefines.h \
   ../../React/Base/RCTURLRequestDelegate.h \
   ../../React/Base/RCTInvalidating.h \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/Network/RCTNetworking.h \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/Network/RCTNetworking.h \
   ../../React/Modules/RCTEventEmitter.h ../../React/Base/RCTBridge.h \
   ../../React/Base/RCTBridgeDelegate.h \
   ../../React/Base/RCTJavaScriptLoader.h \
   ../../React/Base/RCTFrameUpdate.h \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/Network/RCTNetworkTask.h
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/Network/RCTNetworkTask.h

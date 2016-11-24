@@ -1,7 +1,7 @@
 dependencies: \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/WebSocket/RCTWebSocketManager.m \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/WebSocket/RCTWebSocketManager.m \
   ../../React/Base/RCTDefines.h \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/WebSocket/RCTWebSocketManager.h \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/WebSocket/RCTWebSocketManager.h \
   ../../React/Base/RCTWebSocketProxy.h \
   ../../React/Base/RCTWebSocketProxyDelegate.h \
   ../../React/Base/RCTConvert.h ../../React/CSSLayout/CSSLayout.h \
@@ -10,4 +10,4 @@ dependencies: \
   ../../React/Views/RCTTextDecorationLineType.h \
   ../../React/Base/RCTLog.h ../../React/Base/RCTAssert.h \
   ../../React/Views/RCTPointerEvents.h ../../React/Base/RCTUtils.h \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/WebSocket/RCTSRWebSocket.h
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/WebSocket/RCTSRWebSocket.h

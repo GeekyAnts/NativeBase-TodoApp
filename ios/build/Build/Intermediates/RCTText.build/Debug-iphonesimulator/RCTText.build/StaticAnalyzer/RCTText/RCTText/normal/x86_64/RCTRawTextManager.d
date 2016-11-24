@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/Text/RCTRawTextManager.m \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/Text/RCTRawTextManager.h \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/Text/RCTRawTextManager.m \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/Text/RCTRawTextManager.h \
   ../../React/Views/RCTViewManager.h ../../React/Base/RCTBridgeModule.h \
   ../../React/Base/RCTDefines.h ../../React/Base/RCTConvert.h \
   ../../React/CSSLayout/CSSLayout.h ../../React/CSSLayout/CSSMacros.h \
@@ -14,5 +14,5 @@ dependencies: \
   ../../React/Base/RCTJavaScriptLoader.h \
   ../../React/Base/RCTFrameUpdate.h ../../React/Base/RCTInvalidating.h \
   ../../React/Views/UIView+React.h ../../React/Views/RCTComponent.h \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/Libraries/Text/RCTShadowRawText.h \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/Libraries/Text/RCTShadowRawText.h \
   ../../React/Views/RCTShadowView.h ../../React/Base/RCTRootView.h

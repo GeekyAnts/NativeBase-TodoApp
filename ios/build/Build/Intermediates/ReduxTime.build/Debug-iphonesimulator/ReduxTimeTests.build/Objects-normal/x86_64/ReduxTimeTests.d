@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/ios/ReduxTimeTests/ReduxTimeTests.m \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/ios/ReduxTimeTests/ReduxTimeTests.m \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Modules/module.modulemap \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCUIRemote.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCUIKeyboardKeys.h \

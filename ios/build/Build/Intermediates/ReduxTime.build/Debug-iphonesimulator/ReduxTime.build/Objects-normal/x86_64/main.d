@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/ios/ReduxTime/main.m \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/ios/ReduxTime/AppDelegate.h
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/ios/ReduxTime/main.m \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/ios/ReduxTime/AppDelegate.h

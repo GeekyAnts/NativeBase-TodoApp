@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/React/Modules/RCTI18nUtil.m \
-  /Users/aftabbhadki/Sites/projects/ReduxTime/node_modules/react-native/React/Modules/RCTI18nUtil.h
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/React/Modules/RCTI18nUtil.m \
+  /Users/himanshu/Sites/projects/NativeBase-TodoApp/node_modules/react-native/React/Modules/RCTI18nUtil.h
