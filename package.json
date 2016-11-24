@@ -4,23 +4,32 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "eslint": "eslint"
+    "eslint": "eslint",
+    "test": "jest"
   },
   "dependencies": {
     "moment": "^2.15.1",
     "native-base": "^0.5.15",
-    "react": "15.3.1",
-    "react-native": "0.33.0",
+    "react": "15.3.2",
+    "react-native": "0.35.0",
     "react-redux": "^4.4.5",
     "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.1.2",
+    "babel-jest": "17.0.2",
+    "babel-preset-react-native": "1.9.0",
     "eslint": "^3.5.0",
     "eslint-config-airbnb": "^11.1.0",
     "eslint-plugin-import": "^1.14.0",
     "eslint-plugin-jsx-a11y": "^2.2.1",
     "eslint-plugin-react": "^6.2.0",
-    "eslint-plugin-react-native": "^2.0.0"
+    "eslint-plugin-react-native": "^2.0.0",
+    "jest": "17.0.3",
+    "jest-react-native": "17.0.3",
+    "react-test-renderer": "15.3.2"
+  },
+  "jest": {
+    "preset": "jest-react-native"
   }
 }

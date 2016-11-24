@@ -5,9 +5,9 @@ export function addTodo(payload) {
   };
 }
 
-export function setVisibilityFilter(index) {
+export function toggleTodo(index) {
   return {
-    type: 'SET_VISIBILITY_FILTER',
+    type: 'TOGGLE_TODO',
     index,
   };
 }
@@ -16,5 +16,12 @@ export function removeTodo(index) {
   return {
     type: 'REMOVE_TODO',
     index,
+  };
+}
+
+export function setVisibilityFilter(displayType) {
+  return {
+    type: 'SET_VISIBILITY_FILTER',
+    displayType,
   };
 }

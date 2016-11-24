@@ -1,37 +1,21 @@
 import { connect } from 'react-redux';
-
-import Todo from './components/todo';
+import { addTodo, toggleTodo, removeTodo, setVisibilityFilter } from './action';
+import Todo from './components/Todo';
 
 
 function mapStateToProps(state) {
-    // console.log(state)
   return {
     todos: state.todos,
-        // done: state.done
+    displayType: state.displayType,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    addTodo: (payload) => { dispatch(//eslint-disable-line
-      {
-        type: 'ADD_TODO',
-        payload }
-                ); },
-    setVisibilityFilter: (index) => { dispatch(//eslint-disable-line
-      {
-        type: 'SET_VISIBILITY_FILTER',
-        index,
-      }
-      );
-    },
-    removeTodo: (index) => { dispatch(
-      {
-        type: 'REMOVE_TODO',
-        index,
-      }
-    );
-    },
+    addTodo: payload => dispatch(addTodo(payload)),
+    toggleTodo: index => dispatch(toggleTodo(index)),
+    removeTodo: index => dispatch(removeTodo(index)),
+    setVisibilityFilter: displayType => dispatch(setVisibilityFilter(displayType)),
   };
 }
 

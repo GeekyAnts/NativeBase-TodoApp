@@ -1,31 +1,36 @@
 const initialState = {
-  todos:
-  [
-      //  {text: '', completed: false }
-  ],
+  todos: [], // Array of objects of type {text: 'my task', completed: false}
+  displayType: 'all', // expected values: 'all', 'completed', 'active'
 };
+
 export default function (state = initialState, action) {
   switch (action.type) {
     case 'ADD_TODO':
-            // console.log(...state.todos);
       return { ...state,
-        todos:
-              [...state.todos, { text: action.payload, completed: false }] };
-            // console.log(...state.todos);
+        todos: [...state.todos, { text: action.payload, completed: false }],
+      };
     case 'REMOVE_TODO':
       return {
         ...state,
-        todos:[ ...state.todos.slice(0,action.index), ...state.todos.slice(action.index+1)]
+        todos: [...state.todos.slice(0, action.index), ...state.todos.slice(action.index + 1)],
+      };
+    case 'TOGGLE_TODO':
+      return {
+        ...state,
+        todos: state.todos.map((todo, index) => {
+          if (index === action.index) {
+            return {
+              ...todo,
+              completed: !todo.completed,
+            };
+          }
+          return todo;
+        }),
       };
     case 'SET_VISIBILITY_FILTER':
-            // console.log(action.index)
-            // console.log(state.todos[0].completed);
-      var todoObject = state.todos[action.index];//eslint-disable-line
-      todoObject.completed = !todoObject.completed;
-            // console.log(state.todos)
-      return { ...state, todos: [...state.todos] };
-            // return { ...state, todos : [ ...state.todos,
-            // {text: action.payload, completed: !state.todos.completed}]};
+      return {
+        ...state, displayType: action.displayType,
+      };
     default:
   }
   return state;

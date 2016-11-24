@@ -86,9 +86,6 @@ export default class Todo extends Component {
     return (
       <Container>
         <Header >
-          <Button transparent>
-            <Icon name="ios-home"/>
-          </Button>
           <Title>NativeBase To-do App</Title>
         </Header>
 
@@ -137,7 +134,7 @@ export default class Todo extends Component {
           }}
         >
           <InputGroup
-            borderType="rounded"
+            borderType="underline"
             style={{ flex: 0.9 }}
           >
             <Input

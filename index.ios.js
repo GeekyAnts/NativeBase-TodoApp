@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import Index from './app/index';
 
-class ReduxTime extends Component { // eslint-disable-line
+class NativeBaseTodoApp extends Component { // eslint-disable-line
   render() { // eslint-disable-line class-methods-use-this
     return (
       <Index />
@@ -18,4 +18,4 @@ class ReduxTime extends Component { // eslint-disable-line
   }
 }
 
-AppRegistry.registerComponent('ReduxTime', () => ReduxTime);
+AppRegistry.registerComponent('NativeBaseTodoApp', () => NativeBaseTodoApp);
