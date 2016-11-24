@@ -13,20 +13,6 @@ import Index from './app/index';
 class ReduxTime extends Component { // eslint-disable-line
   render() { // eslint-disable-line class-methods-use-this
     return (
-      // <View style={styles.container}>
-      //   <Text style={styles.welcome}>
-      //     Welcome to React Native!
-      //   </Text>
-      //   <Text style={styles.instructions}>
-      //     To get started, edit index.ios.js
-      //   </Text>
-      //   <Text style={styles.instructions}>
-      //     Press Cmd+R to reload,{'\n'}
-      //     Cmd+D or shake for dev menu
-      //   </Text>
-      // </View>
-      // <Index />
-      // <Test />
       <Index />
     );
   }
