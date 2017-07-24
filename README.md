@@ -1,6 +1,8 @@
 # NativeBase-TodoApp
 A basic Todo App built using NativeBase and Redux
 
+**This repository is no longer maintained.**
+
 
 ## Demo
 
