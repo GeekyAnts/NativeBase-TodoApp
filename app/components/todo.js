@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Container, Header, Title, Content, InputGroup, Input, List, Button, Icon } from 'native-base';
 import { View, Text, Dimensions } from 'react-native';
 
@@ -9,11 +10,11 @@ const { width } = Dimensions.get('window');
 export default class Todo extends Component {
 
   static propTypes = {
-    removeTodo: React.PropTypes.func,
-    setVisibilityFilter: React.PropTypes.func,
-    toggleTodo: React.PropTypes.func,
-    todos: React.PropTypes.array,
-    displayType: React.PropTypes.string,
+    removeTodo: PropTypes.func,
+    setVisibilityFilter: PropTypes.func,
+    toggleTodo: PropTypes.func,
+    todos: PropTypes.array,
+    displayType: PropTypes.string,
   }
 
   constructor(props) {
@@ -107,19 +108,25 @@ export default class Todo extends Component {
                 transparent
                 bordered={this.props.displayType === 'all'}
                 onPress={() => this.props.setVisibilityFilter('all')}
-              >All</Button>
+              >
+                <Text> All </Text>
+              </Button>
 
               <Button
                 transparent
                 bordered={this.props.displayType === 'completed'}
                 onPress={() => this.props.setVisibilityFilter('completed')}
-              >Completed</Button>
+              >
+                <Text> Completed </Text>
+              </Button>
 
               <Button
                 transparent
                 bordered={this.props.displayType === 'active'}
                 onPress={() => this.props.setVisibilityFilter('active')}
-              >Active</Button>
+              >
+                <Text> Active </Text>
+              </Button>
 
             </View>}
           </View>
@@ -148,7 +155,9 @@ export default class Todo extends Component {
           <Button
             style={{ flex: 0.1, marginLeft: 15 }}
             onPress={() => this.onSubmit()}
-          > Add </Button>
+          >
+            <Text> Add </Text>
+          </Button>
         </View>
       </Container>
     );
