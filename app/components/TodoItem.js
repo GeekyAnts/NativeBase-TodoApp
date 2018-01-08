@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, Icon, ListItem, CheckBox } from 'native-base';
 
 const TodoItem = ({ toggle, remove, item }) => (
